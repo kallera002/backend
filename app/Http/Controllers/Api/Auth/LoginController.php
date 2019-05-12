@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Tymon\JWTAuth\JWTAuth;
 use Illuminate\Http\Request;
+use Log;
 
 class LoginController extends Controller
 {
@@ -99,7 +100,7 @@ class LoginController extends Controller
 
         return response()->json([
                     'status' => 'success',
-                    'data' => $request->user,
+                    'data' => $request->user(),
                     'token' => $token
                     ], 200);
     }

@@ -21,3 +21,11 @@ Route::group(
         Route::post('/login', 'Auth\LoginController@login');
     }
 );
+
+
+Route::group(
+    ['middleware' => 'jwt.auth'],
+    function () {
+        Route::get('/home', 'HomeController@home');
+    }
+);
