@@ -27,5 +27,6 @@ Route::group(
     ['middleware' => 'jwt.auth'],
     function () {
         Route::get('/home', 'HomeController@home');
+        Route::get('/logout', 'HomeController@logout');
     }
 );
